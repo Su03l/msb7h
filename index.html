@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسبحة إلكترونية</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+        }
+
+        h1 {
+            color: #006699;
+        }
+
+        #counter-container {
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            color: #fff;
+            font-size: 24px;
+            border-radius: 50%;
+            margin: 20px auto;
+            line-height: 100px;
+        }
+
+        .circle-button {
+            font-size: 18px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            margin: 10px 10px;
+        }
+
+        #reset-button {
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .azkar-button {
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #006699;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>مسبحة إلكترونية</h1>
+
+    <div id="counter-container">
+        <span id="counter">0</span>
+    </div>
+
+    <button class="circle-button" onclick="decrementCounter()">-</button>
+    <button class="circle-button" onclick="incrementCounter()">+</button>
+
+    <button id="reset-button" onclick="resetCounter()">تصفير</button>
+
+    <br>
+
+    <button class="azkar-button" onclick="goToMorningAzkar()">أذكار الصباح</button>
+    <button class="azkar-button" onclick="goToEveningAzkar()">أذكار المساء</button>
+
+    <script>
+        let count = 0;
+
+        function updateCounter() {
+            document.getElementById('counter').innerHTML = count;
+        }
+
+        function incrementCounter() {
+            count++;
+            updateCounter();
+        }
+
+        function decrementCounter() {
+            if (count > 0) {
+                count--;
+                updateCounter();
+            }
+        }
+
+        function resetCounter() {
+            count = 0;
+            updateCounter();
+        }
+
+        function goToMorningAzkar() {
+            window.location.href = 'morning_azkar.html';
+        }
+
+        function goToEveningAzkar() {
+            window.location.href = 'evening_azkar.html';
+        }
+    </script>
+
+</body>
+</html>
